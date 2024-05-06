@@ -48,6 +48,46 @@ public interface AlgumaListener extends ParseTreeListener {
 	 */
 	void exitEndereco(AlgumaParser.EnderecoContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link AlgumaParser#op_bool}.
+	 * @param ctx the parse tree
+	 */
+	void enterOp_bool(AlgumaParser.Op_boolContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link AlgumaParser#op_bool}.
+	 * @param ctx the parse tree
+	 */
+	void exitOp_bool(AlgumaParser.Op_boolContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link AlgumaParser#programa}.
+	 * @param ctx the parse tree
+	 */
+	void enterPrograma(AlgumaParser.ProgramaContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link AlgumaParser#programa}.
+	 * @param ctx the parse tree
+	 */
+	void exitPrograma(AlgumaParser.ProgramaContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link AlgumaParser#listaComandos}.
+	 * @param ctx the parse tree
+	 */
+	void enterListaComandos(AlgumaParser.ListaComandosContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link AlgumaParser#listaComandos}.
+	 * @param ctx the parse tree
+	 */
+	void exitListaComandos(AlgumaParser.ListaComandosContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link AlgumaParser#comando}.
+	 * @param ctx the parse tree
+	 */
+	void enterComando(AlgumaParser.ComandoContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link AlgumaParser#comando}.
+	 * @param ctx the parse tree
+	 */
+	void exitComando(AlgumaParser.ComandoContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link AlgumaParser#comandoAtribuicao}.
 	 * @param ctx the parse tree
 	 */
@@ -57,6 +97,16 @@ public interface AlgumaListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitComandoAtribuicao(AlgumaParser.ComandoAtribuicaoContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link AlgumaParser#declaracao}.
+	 * @param ctx the parse tree
+	 */
+	void enterDeclaracao(AlgumaParser.DeclaracaoContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link AlgumaParser#declaracao}.
+	 * @param ctx the parse tree
+	 */
+	void exitDeclaracao(AlgumaParser.DeclaracaoContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link AlgumaParser#declaracao_tipo}.
 	 * @param ctx the parse tree
@@ -78,35 +128,15 @@ public interface AlgumaListener extends ParseTreeListener {
 	 */
 	void exitDeclaracao_registro(AlgumaParser.Declaracao_registroContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link AlgumaParser#op_bool}.
+	 * Enter a parse tree produced by {@link AlgumaParser#declaracao_constante}.
 	 * @param ctx the parse tree
 	 */
-	void enterOp_bool(AlgumaParser.Op_boolContext ctx);
+	void enterDeclaracao_constante(AlgumaParser.Declaracao_constanteContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link AlgumaParser#op_bool}.
+	 * Exit a parse tree produced by {@link AlgumaParser#declaracao_constante}.
 	 * @param ctx the parse tree
 	 */
-	void exitOp_bool(AlgumaParser.Op_boolContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link AlgumaParser#programa}.
-	 * @param ctx the parse tree
-	 */
-	void enterPrograma(AlgumaParser.ProgramaContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link AlgumaParser#programa}.
-	 * @param ctx the parse tree
-	 */
-	void exitPrograma(AlgumaParser.ProgramaContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link AlgumaParser#declaracao}.
-	 * @param ctx the parse tree
-	 */
-	void enterDeclaracao(AlgumaParser.DeclaracaoContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link AlgumaParser#declaracao}.
-	 * @param ctx the parse tree
-	 */
-	void exitDeclaracao(AlgumaParser.DeclaracaoContext ctx);
+	void exitDeclaracao_constante(AlgumaParser.Declaracao_constanteContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link AlgumaParser#expressaoAritmetica}.
 	 * @param ctx the parse tree
@@ -147,26 +177,6 @@ public interface AlgumaListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitTermoRelacional(AlgumaParser.TermoRelacionalContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link AlgumaParser#listaComandos}.
-	 * @param ctx the parse tree
-	 */
-	void enterListaComandos(AlgumaParser.ListaComandosContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link AlgumaParser#listaComandos}.
-	 * @param ctx the parse tree
-	 */
-	void exitListaComandos(AlgumaParser.ListaComandosContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link AlgumaParser#comando}.
-	 * @param ctx the parse tree
-	 */
-	void enterComando(AlgumaParser.ComandoContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link AlgumaParser#comando}.
-	 * @param ctx the parse tree
-	 */
-	void exitComando(AlgumaParser.ComandoContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link AlgumaParser#entrada}.
 	 * @param ctx the parse tree
@@ -308,16 +318,6 @@ public interface AlgumaListener extends ParseTreeListener {
 	 */
 	void exitParametros_declaracao_funcao(AlgumaParser.Parametros_declaracao_funcaoContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link AlgumaParser#retorno_funcao}.
-	 * @param ctx the parse tree
-	 */
-	void enterRetorno_funcao(AlgumaParser.Retorno_funcaoContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link AlgumaParser#retorno_funcao}.
-	 * @param ctx the parse tree
-	 */
-	void exitRetorno_funcao(AlgumaParser.Retorno_funcaoContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link AlgumaParser#declaracao_funcao}.
 	 * @param ctx the parse tree
 	 */
@@ -328,6 +328,16 @@ public interface AlgumaListener extends ParseTreeListener {
 	 */
 	void exitDeclaracao_funcao(AlgumaParser.Declaracao_funcaoContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link AlgumaParser#retorno_funcao}.
+	 * @param ctx the parse tree
+	 */
+	void enterRetorno_funcao(AlgumaParser.Retorno_funcaoContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link AlgumaParser#retorno_funcao}.
+	 * @param ctx the parse tree
+	 */
+	void exitRetorno_funcao(AlgumaParser.Retorno_funcaoContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link AlgumaParser#procedimento}.
 	 * @param ctx the parse tree
 	 */
@@ -337,14 +347,4 @@ public interface AlgumaListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitProcedimento(AlgumaParser.ProcedimentoContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link AlgumaParser#declaracao_constante}.
-	 * @param ctx the parse tree
-	 */
-	void enterDeclaracao_constante(AlgumaParser.Declaracao_constanteContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link AlgumaParser#declaracao_constante}.
-	 * @param ctx the parse tree
-	 */
-	void exitDeclaracao_constante(AlgumaParser.Declaracao_constanteContext ctx);
 }

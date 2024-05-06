@@ -17,6 +17,7 @@ public class MyCustomErrorListener implements ANTLRErrorListener {
         this.pw = pw;    
     }
     
+    //variável de controle para que fosse exibido somente o primeiro erro dos algoritmos
     boolean i = true;
 
     @Override
@@ -42,9 +43,11 @@ public class MyCustomErrorListener implements ANTLRErrorListener {
         
         if(i == true){
             if(t.getText() == "<EOF>"){
+                //saída customizada para <EOF>, como é o último erro, não foi necessário setar i como falso
                 pw.println("Linha "+line+": erro sintatico proximo a EOF");
             }else if(AlgumaLexer.VOCABULARY.getDisplayName(t.getType()) == "CADEIA_NAO_FECHADA"){
                 pw.println("Linha "+line+": cadeia literal nao fechada");
+                i = false;
             }else if(AlgumaLexer.VOCABULARY.getDisplayName(t.getType()) == "ERRO"){
                 pw.println("Linha "+line+": "+t.getText()+" - simbolo nao identificado");
                 i = false;
